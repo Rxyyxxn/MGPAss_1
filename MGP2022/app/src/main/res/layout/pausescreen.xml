@@ -13,7 +13,7 @@
         app:srcCompat="@drawable/plainbg" />
 
     <Button
-        android:id="@+id/btn_start"
+        android:id="@+id/btn_settings"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
         android:textColor="#5505D3" />
 
     <Button
-        android:id="@+id/btn_back"
+        android:id="@+id/btn_return"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
