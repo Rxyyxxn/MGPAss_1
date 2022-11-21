@@ -18,11 +18,12 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="258dp"
-        android:layout_marginRight="389dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginRight="390dp"
         android:background="@drawable/button"
-        android:text="Settings"
-        android:textColor="	#FF0000" />
+        android:text="Retry"
+        android:textColor="#00FF00"
+         />
 
     <Button
         android:id="@+id/btn_back"
@@ -30,11 +31,11 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="257dp"
+        android:layout_marginTop="181dp"
         android:layout_marginRight="209dp"
         android:background="@drawable/button"
-        android:text="Return"
-        android:textColor="#00FF00" />
+        android:text="Quit"
+        android:textColor="	#FF0000"/>
 
     <EditText
         android:id="@+id/text"
@@ -42,41 +43,41 @@
         android:layout_height="148dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="1dp"
-        android:layout_marginRight="238dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="241dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Game Over!"
+        android:text="Game Over,you lost!"
         android:textAlignment="center"
-        android:textColor="#FF0000" />
+        android:textColor="#C0C0C0" />
 
-    <EditText
-        android:id="@+id/text2"
-        android:layout_width="267dp"
-        android:layout_height="148dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="66dp"
-        android:layout_marginRight="234dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="You died!"
-        android:textAlignment="center"
-        android:textColor="#FFFF00" />
+    <!--    <EditText-->
+<!--        android:id="@+id/text2"-->
+<!--        android:layout_width="267dp"-->
+<!--        android:layout_height="148dp"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_marginTop="66dp"-->
+<!--        android:layout_marginRight="234dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:text="You died!"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="#FFFF00" />-->
 
-    <EditText
-        android:id="@+id/text3"
-        android:layout_width="267dp"
-        android:layout_height="148dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="135dp"
-        android:layout_marginRight="227dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Retry from previous checkpoint?"
-        android:textAlignment="center"
-        android:textColor="#FFFF00" />
+<!--    <EditText-->
+<!--        android:id="@+id/text3"-->
+<!--        android:layout_width="267dp"-->
+<!--        android:layout_height="148dp"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_marginTop="135dp"-->
+<!--        android:layout_marginRight="227dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:text="Retry from previous checkpoint?"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="#FFFF00" />-->
 
 
 </RelativeLayout>
