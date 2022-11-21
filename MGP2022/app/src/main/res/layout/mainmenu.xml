@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgnd"
+    android:background="@drawable/plainbg"
     android:orientation="horizontal">
 
     <ImageView
@@ -22,7 +22,7 @@
         android:layout_marginRight="299dp"
         android:background="@drawable/button"
         android:text="Start"
-        android:textColor="#5505D3" />
+        android:textColor="#C0C0C0" />
 
     <Button
         android:id="@+id/btn_back"
@@ -34,6 +34,20 @@
         android:layout_marginRight="303dp"
         android:background="@drawable/button"
         android:text="Back"
-        android:textColor="#bdfcf2" />
+        android:textColor="#C0C0C0" />
+
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="267dp"
+        android:layout_height="148dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginRight="238dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Main Menu"
+        android:textAlignment="center"
+        android:textColor="#C0C0C0" />
 
 </RelativeLayout>
