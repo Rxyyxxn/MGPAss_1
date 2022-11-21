@@ -51,7 +51,7 @@ public class Pausescreen extends Activity implements OnClickListener, StateBase 
 
         Intent intent = new Intent();
 
-        if (v == btn_retry)
+        if (v == btn_settings)
         {
             // intent --> to set to another class which another page or screen that we are launching.
             intent.setClass(this, GamePage.class);
@@ -59,7 +59,7 @@ public class Pausescreen extends Activity implements OnClickListener, StateBase 
 
         }
 
-        else if (v == btn_quit)
+        else if (v == btn_return)
         {
             intent.setClass(this, Mainmenu.class);
         }
