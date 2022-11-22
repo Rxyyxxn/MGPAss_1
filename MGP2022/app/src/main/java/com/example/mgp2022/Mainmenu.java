@@ -18,6 +18,7 @@ public class Mainmenu extends Activity implements OnClickListener, StateBase {  
     //Define buttons
     private Button btn_start;
     private Button btn_back;
+    private Button btn_settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,12 @@ public class Mainmenu extends Activity implements OnClickListener, StateBase {  
         btn_back = (Button)findViewById(R.id.btn_back);
         btn_back.setOnClickListener(this); //Set Listener to this button --> Back Button
 
+        btn_settings = (Button)findViewById(R.id.btn_settings);
+        btn_settings.setOnClickListener(this); //Set Listener to this button --> Back Button
+
         StateManager.Instance.AddState(new Mainmenu());
+        StateManager.Instance.AddState(new Deathscreen());
+        StateManager.Instance.AddState(new Settings());
     }
 
     @Override
@@ -61,7 +67,16 @@ public class Mainmenu extends Activity implements OnClickListener, StateBase {  
 
         else if (v == btn_back)
         {
-            intent.setClass(this, Mainmenu.class);
+            // intent --> to set to another class which another page or screen that we are launching.
+            intent.setClass(this, Deathscreen.class);
+            StateManager.Instance.ChangeState("Deathscreen"); // Default is like a loading page
+        }
+
+        else if (v == btn_settings)
+        {
+            // intent --> to set to another class which another page or screen that we are launching.
+            intent.setClass(this, Settings.class);
+            StateManager.Instance.ChangeState("Settings"); // Default is like a loading page
         }
         startActivity(intent);
 

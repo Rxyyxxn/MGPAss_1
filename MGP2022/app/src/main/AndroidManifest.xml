@@ -33,6 +33,16 @@
         </activity>
 
         <activity
+            android:name = ".Deathscreen"
+            android:screenOrientation ="landscape"
+            android:exported="true">
+            <intent-filter>
+                <action android:name = "android.intent.action.MAIN" />
+                <category android:name = "android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name = ".Mainmenu"
             android:screenOrientation ="landscape"
             android:exported="true">
@@ -53,7 +63,7 @@
         </activity>
 
         <activity
-            android:name = ".Deathscreen"
+            android:name = ".Settings"
             android:screenOrientation ="landscape"
             android:exported="true">
             <intent-filter>

@@ -61,7 +61,10 @@ public class Deathscreen extends Activity implements OnClickListener, StateBase 
 
         else if (v == btn_quit)
         {
-            intent.setClass(this, Mainmenu.class);
+            //to quit
+            moveTaskToBack(true);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
         }
         startActivity(intent);
 

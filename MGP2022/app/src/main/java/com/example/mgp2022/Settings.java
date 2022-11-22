@@ -1,24 +1,28 @@
 package com.example.mgp2022;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
+import android.media.AudioManager;
+import android.os.Bundle;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.content.Intent;
+import android.widget.Button;
+import android.widget.SeekBar;
 
 // Created by TanSiewLan2021
 
-public class Pausescreen extends Activity implements OnClickListener, StateBase {  //Using StateBase class
+public class Settings extends Activity implements OnClickListener, StateBase {  //Using StateBase class
 
     //Define buttons
-    private Button btn_settings;
-    private Button btn_return;
-
+    private Button btn_start;
+    private Button btn_back;
+    SeekBar seekbar_vol;
+    AudioManager audiomanager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +34,43 @@ public class Pausescreen extends Activity implements OnClickListener, StateBase 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.pausescreen);
+        setContentView(R.layout.settings);
 
-        btn_settings = (Button)findViewById(R.id.btn_settings);
-        btn_settings.setOnClickListener(this); //Set Listener to this button --> retry Button
+        btn_start = (Button)findViewById(R.id.btn_retry);
+        btn_start.setOnClickListener(this); //Set Listener to this button --> Start Button
 
-        btn_return = (Button)findViewById(R.id.btn_return);
-        btn_return.setOnClickListener(this); //Set Listener to this button --> quit Button
+        btn_back = (Button)findViewById(R.id.btn_quit);
+        btn_back.setOnClickListener(this); //Set Listener to this button --> Back Button
 
-        StateManager.Instance.AddState(new Pausescreen());
+        seekbar_vol=findViewById(R.id.seekbar_vol);
+        audiomanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        //get max volume
+        int maxvolume = audiomanager.getStreamMaxVolume(audiomanager.STREAM_MUSIC);
+
+        //get current volume
+        int curvolume = audiomanager.getStreamVolume(audiomanager.STREAM_MUSIC);
+
+        seekbar_vol.setMax(maxvolume);
+        seekbar_vol.setProgress(curvolume);
+        seekbar_vol.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromuser) {
+                audiomanager.setStreamVolume(audiomanager.STREAM_MUSIC,progress,0);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+        StateManager.Instance.AddState(new Settings());
     }
 
     @Override
@@ -51,7 +83,7 @@ public class Pausescreen extends Activity implements OnClickListener, StateBase 
 
         Intent intent = new Intent();
 
-        if (v == btn_settings)
+        if (v == btn_start)
         {
             // intent --> to set to another class which another page or screen that we are launching.
             intent.setClass(this, GamePage.class);
@@ -59,7 +91,7 @@ public class Pausescreen extends Activity implements OnClickListener, StateBase 
 
         }
 
-        else if (v == btn_return)
+        else if (v == btn_back)
         {
             intent.setClass(this, Mainmenu.class);
         }
@@ -85,7 +117,7 @@ public class Pausescreen extends Activity implements OnClickListener, StateBase 
 
     @Override
     public String GetName() {
-        return "Pausescreen";
+        return "Mainmenu";
     }
 
     @Override
