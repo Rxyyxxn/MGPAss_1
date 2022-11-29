@@ -20,8 +20,10 @@ public class MainGameSceneState implements StateBase {
     @Override
     public void OnEnter(SurfaceView _view)
     {
+        //To render in game screen
         RenderBackground.Create();
         // Example to include another Renderview for Pause Button
+        RenderTextEntity.Create();
     }
 
     @Override
